@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F95D54B71DA88D0600028D06 /* StarterKit.h in Headers */ = {isa = PBXBuildFile; fileRef = F95D54B61DA88D0600028D06 /* StarterKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F95D54BF1DA88D8100028D06 /* StarterKitInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D54BE1DA88D8100028D06 /* StarterKitInterface.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F95D54B31DA88D0600028D06 /* StarterKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StarterKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F95D54B61DA88D0600028D06 /* StarterKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StarterKit.h; sourceTree = "<group>"; };
 		F95D54B81DA88D0600028D06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F95D54BE1DA88D8100028D06 /* StarterKitInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarterKitInterface.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,8 +46,8 @@
 		F95D54B51DA88D0600028D06 /* StarterKit */ = {
 			isa = PBXGroup;
 			children = (
-				F95D54B61DA88D0600028D06 /* StarterKit.h */,
 				F95D54B81DA88D0600028D06 /* Info.plist */,
+				F95D54BE1DA88D8100028D06 /* StarterKitInterface.swift */,
 			);
 			path = StarterKit;
 			sourceTree = "<group>";
@@ -59,7 +59,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F95D54B71DA88D0600028D06 /* StarterKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +129,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F95D54BF1DA88D8100028D06 /* StarterKitInterface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +230,7 @@
 		F95D54BC1DA88D0600028D06 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -240,12 +241,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = competeidev.StarterKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		F95D54BD1DA88D0600028D06 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;

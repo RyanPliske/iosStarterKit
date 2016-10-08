@@ -12,7 +12,7 @@ public class PlistPersistence: Persistence {
     public var filePath: String!
     public let name: String
     
-    init(name: String) {
+    public init(name: String) {
         self.name = name
     }
 }
@@ -23,7 +23,7 @@ public class FilePersistence: Persistence {
     public var filePath: String!
     public let name: String
     
-    init(name: String) {
+    public init(name: String) {
         self.name = name
     }
 }

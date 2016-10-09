@@ -7,13 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F90E5D731DAAE26700064708 /* TemporaryAuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90E5D721DAAE26700064708 /* TemporaryAuthenticationManager.swift */; };
 		F95D54BF1DA88D8100028D06 /* StarterKitInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D54BE1DA88D8100028D06 /* StarterKitInterface.swift */; };
+		F996D44F1DAA908900DAC469 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996D44E1DAA908900DAC469 /* LoginViewController.swift */; };
+		F996D4511DAA918300DAC469 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F996D4501DAA918300DAC469 /* Login.storyboard */; };
+		F996D4541DAA958400DAC469 /* NSBundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996D4531DAA958400DAC469 /* NSBundle+Extension.swift */; };
+		F996D4A41DAAC4BA00DAC469 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996D4A31DAAC4BA00DAC469 /* LoginButton.swift */; };
+		F996D4A61DAACA0D00DAC469 /* KeyboardListeningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996D4A51DAACA0D00DAC469 /* KeyboardListeningView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F90E5D721DAAE26700064708 /* TemporaryAuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemporaryAuthenticationManager.swift; sourceTree = "<group>"; };
 		F95D54B31DA88D0600028D06 /* StarterKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StarterKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F95D54B81DA88D0600028D06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F95D54BE1DA88D8100028D06 /* StarterKitInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarterKitInterface.swift; sourceTree = "<group>"; };
+		F996D44E1DAA908900DAC469 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F996D4501DAA918300DAC469 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		F996D4531DAA958400DAC469 /* NSBundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSBundle+Extension.swift"; sourceTree = "<group>"; };
+		F996D4A31DAAC4BA00DAC469 /* LoginButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
+		F996D4A51DAACA0D00DAC469 /* KeyboardListeningView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardListeningView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,8 +60,22 @@
 			children = (
 				F95D54B81DA88D0600028D06 /* Info.plist */,
 				F95D54BE1DA88D8100028D06 /* StarterKitInterface.swift */,
+				F996D44E1DAA908900DAC469 /* LoginViewController.swift */,
+				F996D4501DAA918300DAC469 /* Login.storyboard */,
+				F996D4A31DAAC4BA00DAC469 /* LoginButton.swift */,
+				F90E5D721DAAE26700064708 /* TemporaryAuthenticationManager.swift */,
+				F996D4A51DAACA0D00DAC469 /* KeyboardListeningView.swift */,
+				F996D4521DAA956F00DAC469 /* Extensions */,
 			);
 			path = StarterKit;
+			sourceTree = "<group>";
+		};
+		F996D4521DAA956F00DAC469 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F996D4531DAA958400DAC469 /* NSBundle+Extension.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,6 +145,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F996D4511DAA918300DAC469 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +156,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F90E5D731DAAE26700064708 /* TemporaryAuthenticationManager.swift in Sources */,
+				F996D44F1DAA908900DAC469 /* LoginViewController.swift in Sources */,
+				F996D4A41DAAC4BA00DAC469 /* LoginButton.swift in Sources */,
+				F996D4A61DAACA0D00DAC469 /* KeyboardListeningView.swift in Sources */,
+				F996D4541DAA958400DAC469 /* NSBundle+Extension.swift in Sources */,
 				F95D54BF1DA88D8100028D06 /* StarterKitInterface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,7 +271,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = competeidev.StarterKit;
+				PRODUCT_BUNDLE_IDENTIFIER = competidev.StarterKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -258,7 +290,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = competeidev.StarterKit;
+				PRODUCT_BUNDLE_IDENTIFIER = competidev.StarterKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};

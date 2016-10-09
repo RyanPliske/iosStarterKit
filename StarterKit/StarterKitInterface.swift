@@ -1,4 +1,67 @@
 import Foundation
+import UIKit
+
+public struct AppInfo {
+    public var loginBgImage: UIImage?
+    public var appName: String?
+    public var persistenceDirectory: String?
+    
+    public init(appName: String? = nil, loginBackground bgImage: UIImage? = nil) {
+        self.appName = appName
+        self.loginBgImage = bgImage
+    }
+}
+
+public struct Credentials {
+    public let username: String
+    public let password: String
+    
+    public init(username:String, password: String) {
+        self.username = username
+        self.password = password
+    }
+}
+
+public protocol StarterKitDelegate: class {
+    func userWasAuthenticated(withCredentials credentials: Credentials)
+}
+
+public class StarterKit: AuthenticationDelegate {
+    
+    private let window: UIWindow
+    private let initialViewController: UIViewController
+    private let authenticationManager: FakeAuthenticationManager
+    private weak var delegate: StarterKitDelegate!
+    
+    public init(inout window: UIWindow?, initialViewController: UIViewController, delegate: StarterKitDelegate, appInfo: AppInfo? = nil) {
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        self.window = window!
+        self.initialViewController = initialViewController
+        self.authenticationManager = FakeAuthenticationManager(serviceManager: FakeAuthenticationServiceManager(), keyChainHelper: FakeKeyChainHelper())
+        self.delegate = delegate
+        // Post Initialization
+        self.authenticationManager.delegate = self
+        self.window.makeKeyAndVisible()
+        let storyboard = UIStoryboard(name: "Login", bundle: NSBundle.StarterKitBundle)
+        let loginVC = storyboard.instantiateInitialViewController() as! LoginViewController
+        loginVC.delegate = authenticationManager
+        loginVC.image = appInfo?.loginBgImage
+        loginVC.view.backgroundColor = UIColor(red: 146/255, green: 204/255, blue: 148/255, alpha: 1.0)
+        self.window.rootViewController = loginVC
+    }
+    
+    internal func loginSucceeded(username: String, password: String) {
+        UIView.animateWithDuration(0.5, animations: { [weak self] in
+            self?.window.rootViewController!.view.alpha = 0.0
+        }) { [weak self](cancelled) in
+            self?.window.rootViewController = self?.initialViewController
+            self?.delegate.userWasAuthenticated(withCredentials: Credentials(username: username, password: password))
+        }
+    }
+    
+}
+
+// MARK: - Persistence
 
 public protocol Persistence: class {
     var filePath: String! { get set }
@@ -28,7 +91,7 @@ public class FilePersistence: Persistence {
     }
 }
 
-// pass in your persistence classes that you subclassed from above and this will build the fire structure for you
+// pass in your persistence classes that you subclassed from above and this will build the file structure for you
 
 public struct PersistenceInitializer {
     

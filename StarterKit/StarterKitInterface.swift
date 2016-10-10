@@ -4,7 +4,6 @@ import UIKit
 public struct AppInfo {
     public var loginBgImage: UIImage?
     public var appName: String?
-    public var persistenceDirectory: String?
     
     public init(appName: String? = nil, loginBackground bgImage: UIImage? = nil) {
         self.appName = appName
@@ -95,12 +94,21 @@ public class FilePersistence: Persistence {
 
 public struct PersistenceInitializer {
     
-    public init?(baseDirectory: String, persistenceStarters: [Persistence]) {
+    public init?(baseDirectory: String, userDirectory: String, persistenceStarters: [Persistence]) {
         let fileManager = NSFileManager.defaultManager()
         guard var baseURL = try? fileManager.URLForDirectory(NSSearchPathDirectory.LibraryDirectory, inDomain: NSSearchPathDomainMask.UserDomainMask, appropriateForURL: nil, create: true) else {
             return nil
         }
+        
         baseURL = baseURL.URLByAppendingPathComponent(baseDirectory)
+        
+        if fileManager.fileExistsAtPath(baseURL.path!) == false {
+            guard let _ = try? NSFileManager.defaultManager().createDirectoryAtURL(baseURL, withIntermediateDirectories: true, attributes: nil) else {
+                return nil
+            }
+        }
+        
+        baseURL = baseURL.URLByAppendingPathComponent(userDirectory)
         
         if fileManager.fileExistsAtPath(baseURL.path!) == false {
             guard let _ = try? NSFileManager.defaultManager().createDirectoryAtURL(baseURL, withIntermediateDirectories: true, attributes: nil) else {

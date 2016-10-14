@@ -2,12 +2,14 @@ import Foundation
 import UIKit
 
 public struct AppInfo {
-    public var loginBgImage: UIImage?
-    public var appName: String?
+    internal let loginBgImage: UIImage?
+    internal let appName: String?
+    internal let includesRegistration: Bool
     
-    public init(appName: String? = nil, loginBackground bgImage: UIImage? = nil) {
+    public init(appName: String? = nil, loginBackground bgImage: UIImage? = nil, includesRegistration: Bool = false) {
         self.appName = appName
         self.loginBgImage = bgImage
+        self.includesRegistration = includesRegistration
     }
 }
 
@@ -28,14 +30,14 @@ public protocol StarterKitDelegate: class {
 public class StarterKit: AuthenticationDelegate {
     
     private let window: UIWindow
-    private let initialViewController: UIViewController
+    private let hostAppInitialViewController: UIViewController
     private let authenticationManager: FakeAuthenticationManager
     private weak var delegate: StarterKitDelegate!
     
-    public init(inout window: UIWindow?, initialViewController: UIViewController, delegate: StarterKitDelegate, appInfo: AppInfo? = nil) {
+    public init(inout window: UIWindow?, initialViewController: UIViewController, delegate: StarterKitDelegate, appInfo: AppInfo) {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window = window!
-        self.initialViewController = initialViewController
+        self.hostAppInitialViewController = initialViewController
         self.authenticationManager = FakeAuthenticationManager(serviceManager: FakeAuthenticationServiceManager(), keyChainHelper: FakeKeyChainHelper())
         self.delegate = delegate
         // Post Initialization
@@ -44,8 +46,7 @@ public class StarterKit: AuthenticationDelegate {
         let storyboard = UIStoryboard(name: "Login", bundle: NSBundle.StarterKitBundle)
         let loginVC = storyboard.instantiateInitialViewController() as! LoginViewController
         loginVC.delegate = authenticationManager
-        loginVC.image = appInfo?.loginBgImage
-        loginVC.view.backgroundColor = UIColor(red: 146/255, green: 204/255, blue: 148/255, alpha: 1.0)
+        loginVC.appInfo = appInfo
         self.window.rootViewController = loginVC
     }
     
@@ -53,7 +54,7 @@ public class StarterKit: AuthenticationDelegate {
         UIView.animateWithDuration(0.5, animations: { [weak self] in
             self?.window.rootViewController!.view.alpha = 0.0
         }) { [weak self](cancelled) in
-            self?.window.rootViewController = self?.initialViewController
+            self?.window.rootViewController = self?.hostAppInitialViewController
             self?.delegate.userWasAuthenticated(withCredentials: Credentials(username: username, password: password))
         }
     }

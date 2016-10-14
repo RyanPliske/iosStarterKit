@@ -44,6 +44,13 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPG-Dh-AuE">
+                                <rect key="frame" x="268" y="440" width="64" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -51,11 +58,13 @@
                             <constraint firstItem="mE3-c2-SAy" firstAttribute="top" secondItem="xLz-wP-IFX" secondAttribute="bottom" constant="20" id="Aaq-9w-Whe"/>
                             <constraint firstItem="c0L-qd-wEE" firstAttribute="leading" secondItem="R4n-1C-VBc" secondAttribute="leading" id="Ipq-2J-CV2"/>
                             <constraint firstItem="oUd-vc-xDQ" firstAttribute="top" secondItem="mE3-c2-SAy" secondAttribute="bottom" constant="20" id="IuI-kk-Chz"/>
+                            <constraint firstItem="vPG-Dh-AuE" firstAttribute="top" secondItem="oUd-vc-xDQ" secondAttribute="bottom" constant="20" id="Kv0-pG-lpW"/>
                             <constraint firstAttribute="trailing" secondItem="c0L-qd-wEE" secondAttribute="trailing" id="UML-6K-0xK"/>
                             <constraint firstItem="xLz-wP-IFX" firstAttribute="top" secondItem="c0L-qd-wEE" secondAttribute="centerY" constant="-30" id="Wu4-HA-V4g"/>
                             <constraint firstItem="mE3-c2-SAy" firstAttribute="height" secondItem="xLz-wP-IFX" secondAttribute="height" id="dEg-vP-Rba"/>
                             <constraint firstItem="mE3-c2-SAy" firstAttribute="centerX" secondItem="c0L-qd-wEE" secondAttribute="centerX" id="eer-Hh-pdG"/>
                             <constraint firstItem="xLz-wP-IFX" firstAttribute="centerX" secondItem="c0L-qd-wEE" secondAttribute="centerX" id="g9l-vD-jBg"/>
+                            <constraint firstItem="vPG-Dh-AuE" firstAttribute="centerX" secondItem="c0L-qd-wEE" secondAttribute="centerX" id="ki3-yP-Lm4"/>
                             <constraint firstItem="9N1-6h-if3" firstAttribute="top" secondItem="c0L-qd-wEE" secondAttribute="bottom" id="mX4-2l-Q6X"/>
                             <constraint firstItem="c0L-qd-wEE" firstAttribute="top" secondItem="R4n-1C-VBc" secondAttribute="top" id="ufH-zP-e1D"/>
                             <constraint firstItem="mE3-c2-SAy" firstAttribute="width" secondItem="xLz-wP-IFX" secondAttribute="width" id="wER-ld-zL0"/>
@@ -66,6 +75,7 @@
                         <outlet property="loginButton" destination="oUd-vc-xDQ" id="NiU-Rn-Mln"/>
                         <outlet property="loginImageView" destination="c0L-qd-wEE" id="ntD-HP-7ha"/>
                         <outlet property="passwordTextField" destination="mE3-c2-SAy" id="Rys-tC-mN8"/>
+                        <outlet property="registerButton" destination="vPG-Dh-AuE" id="YtG-qd-H2F"/>
                         <outlet property="usernameTextField" destination="xLz-wP-IFX" id="Ezd-qU-GrX"/>
                     </connections>
                 </viewController>

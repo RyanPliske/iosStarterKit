@@ -22,14 +22,28 @@ internal final class LoginViewController: UIViewController, UITextFieldDelegate 
         loginImageView.image = appInfo.loginBgImage
         usernameTextField.delegate = self
         passwordTextField.delegate = self
-        loginButton.enabled = false
         registerButton.hidden = !appInfo.includesRegistration
+        disableLoginButton()
+    }
+    
+    @IBAction func registrationButtonPressed(sender: AnyObject) {
+        
+    }
+    
+    @IBAction func loginButtonPressed(sender: AnyObject) {
+        view.endEditing(true)
+        delegate?.loginSucceeded(usernameTextField.text!, password: passwordTextField.text!)
+    }
+    
+    private func disableLoginButton() {
+        loginButton.enabled = false
+        loginButton.alpha = 0.2
     }
     
     // MARK: - UITextFieldDelegate
     
     internal func textFieldShouldReturn(textField: UITextField) -> Bool {
-        if loginEnabled &&  textField == passwordTextField {
+        if loginEnabled() &&  textField == passwordTextField {
             textField.resignFirstResponder()
             delegate?.loginSucceeded(usernameTextField.text!, password: passwordTextField.text!)
         } else if textField == usernameTextField {
@@ -38,8 +52,19 @@ internal final class LoginViewController: UIViewController, UITextFieldDelegate 
         return true
     }
     
-    internal var loginEnabled: Bool {
-        return usernameTextField.text != nil && passwordTextField.text != nil
+    func textFieldDidEndEditing(textField: UITextField) {
+        loginEnabled()
+    }
+    
+    private func loginEnabled() -> Bool {
+        let enabled = usernameTextField.text?.isEmpty == false && passwordTextField.text?.isEmpty == false
+        if enabled {
+            loginButton.enabled = true
+            loginButton.alpha = 1.0
+        } else {
+            disableLoginButton()
+        }
+        return enabled
     }
     
 }

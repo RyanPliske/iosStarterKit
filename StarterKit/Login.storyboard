@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JEX-uh-Pdp">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -21,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xLz-wP-IFX">
-                                <rect key="frame" x="190" y="270" width="220" height="40"/>
+                                <rect key="frame" x="190" y="320" width="220" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="LUZ-pE-BjW"/>
                                     <constraint firstAttribute="width" constant="220" id="lSt-d2-LpG"/>
@@ -33,7 +32,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mE3-c2-SAy">
-                                <rect key="frame" x="190" y="330" width="220" height="40"/>
+                                <rect key="frame" x="190" y="380" width="220" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                 <connections>
@@ -41,11 +40,8 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUd-vc-xDQ" customClass="LoginButton" customModule="StarterKit" customModuleProvider="target">
-                                <rect key="frame" x="250" y="390" width="100" height="30"/>
+                                <rect key="frame" x="190" y="440" width="220" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.097718601082431397" blue="0.19555693142424235" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="KeA-bZ-hmn"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="LOGIN">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -57,17 +53,11 @@
                                     <action selector="loginButtonPressed:" destination="JEX-uh-Pdp" eventType="touchUpInside" id="oGh-xD-rAa"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vPG-Dh-AuE">
-                                <rect key="frame" x="270" y="435" width="61" height="30"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Register">
-                                            <attributes>
-                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPG-Dh-AuE">
+                                <rect key="frame" x="272" y="495" width="56" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="registrationButtonPressed:" destination="JEX-uh-Pdp" eventType="touchUpInside" id="4P1-v5-ZPX"/>
@@ -76,18 +66,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="oUd-vc-xDQ" firstAttribute="width" secondItem="xLz-wP-IFX" secondAttribute="width" id="5Cr-uh-z2E"/>
+                            <constraint firstItem="vPG-Dh-AuE" firstAttribute="bottom" secondItem="c0L-qd-wEE" secondAttribute="bottom" constant="-75" id="5lp-KK-BO6"/>
                             <constraint firstItem="oUd-vc-xDQ" firstAttribute="centerX" secondItem="c0L-qd-wEE" secondAttribute="centerX" id="6Gd-29-3SK"/>
                             <constraint firstItem="mE3-c2-SAy" firstAttribute="top" secondItem="xLz-wP-IFX" secondAttribute="bottom" constant="20" id="Aaq-9w-Whe"/>
                             <constraint firstItem="c0L-qd-wEE" firstAttribute="leading" secondItem="R4n-1C-VBc" secondAttribute="leading" id="Ipq-2J-CV2"/>
                             <constraint firstItem="oUd-vc-xDQ" firstAttribute="top" secondItem="mE3-c2-SAy" secondAttribute="bottom" constant="20" id="IuI-kk-Chz"/>
                             <constraint firstItem="vPG-Dh-AuE" firstAttribute="top" secondItem="oUd-vc-xDQ" secondAttribute="bottom" constant="15" id="Kv0-pG-lpW"/>
                             <constraint firstAttribute="trailing" secondItem="c0L-qd-wEE" secondAttribute="trailing" id="UML-6K-0xK"/>
-                            <constraint firstItem="xLz-wP-IFX" firstAttribute="top" secondItem="c0L-qd-wEE" secondAttribute="centerY" constant="-30" id="Wu4-HA-V4g"/>
                             <constraint firstItem="mE3-c2-SAy" firstAttribute="height" secondItem="xLz-wP-IFX" secondAttribute="height" id="dEg-vP-Rba"/>
                             <constraint firstItem="mE3-c2-SAy" firstAttribute="centerX" secondItem="c0L-qd-wEE" secondAttribute="centerX" id="eer-Hh-pdG"/>
                             <constraint firstItem="xLz-wP-IFX" firstAttribute="centerX" secondItem="c0L-qd-wEE" secondAttribute="centerX" id="g9l-vD-jBg"/>
                             <constraint firstItem="vPG-Dh-AuE" firstAttribute="centerX" secondItem="c0L-qd-wEE" secondAttribute="centerX" id="ki3-yP-Lm4"/>
                             <constraint firstItem="9N1-6h-if3" firstAttribute="top" secondItem="c0L-qd-wEE" secondAttribute="bottom" id="mX4-2l-Q6X"/>
+                            <constraint firstItem="oUd-vc-xDQ" firstAttribute="height" secondItem="xLz-wP-IFX" secondAttribute="height" id="niE-tU-XGC"/>
                             <constraint firstItem="c0L-qd-wEE" firstAttribute="top" secondItem="R4n-1C-VBc" secondAttribute="top" id="ufH-zP-e1D"/>
                             <constraint firstItem="mE3-c2-SAy" firstAttribute="width" secondItem="xLz-wP-IFX" secondAttribute="width" id="wER-ld-zL0"/>
                         </constraints>

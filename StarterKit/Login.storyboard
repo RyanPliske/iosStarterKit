@@ -57,11 +57,17 @@
                                     <action selector="loginButtonPressed:" destination="JEX-uh-Pdp" eventType="touchUpInside" id="oGh-xD-rAa"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPG-Dh-AuE">
-                                <rect key="frame" x="268" y="440" width="64" height="33"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Register">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vPG-Dh-AuE">
+                                <rect key="frame" x="270" y="435" width="61" height="30"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Register">
+                                            <attributes>
+                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                 </state>
                                 <connections>
                                     <action selector="registrationButtonPressed:" destination="JEX-uh-Pdp" eventType="touchUpInside" id="4P1-v5-ZPX"/>
@@ -74,7 +80,7 @@
                             <constraint firstItem="mE3-c2-SAy" firstAttribute="top" secondItem="xLz-wP-IFX" secondAttribute="bottom" constant="20" id="Aaq-9w-Whe"/>
                             <constraint firstItem="c0L-qd-wEE" firstAttribute="leading" secondItem="R4n-1C-VBc" secondAttribute="leading" id="Ipq-2J-CV2"/>
                             <constraint firstItem="oUd-vc-xDQ" firstAttribute="top" secondItem="mE3-c2-SAy" secondAttribute="bottom" constant="20" id="IuI-kk-Chz"/>
-                            <constraint firstItem="vPG-Dh-AuE" firstAttribute="top" secondItem="oUd-vc-xDQ" secondAttribute="bottom" constant="20" id="Kv0-pG-lpW"/>
+                            <constraint firstItem="vPG-Dh-AuE" firstAttribute="top" secondItem="oUd-vc-xDQ" secondAttribute="bottom" constant="15" id="Kv0-pG-lpW"/>
                             <constraint firstAttribute="trailing" secondItem="c0L-qd-wEE" secondAttribute="trailing" id="UML-6K-0xK"/>
                             <constraint firstItem="xLz-wP-IFX" firstAttribute="top" secondItem="c0L-qd-wEE" secondAttribute="centerY" constant="-30" id="Wu4-HA-V4g"/>
                             <constraint firstItem="mE3-c2-SAy" firstAttribute="height" secondItem="xLz-wP-IFX" secondAttribute="height" id="dEg-vP-Rba"/>

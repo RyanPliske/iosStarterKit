@@ -27,7 +27,9 @@ internal final class LoginViewController: UIViewController, UITextFieldDelegate 
     }
     
     @IBAction func registrationButtonPressed(sender: AnyObject) {
-        
+        let storyboard = UIStoryboard(name: "Registration", bundle: NSBundle.StarterKitBundle)
+        let registrationViewController = storyboard.instantiateInitialViewController() as! RegistrationViewController
+        presentViewController(registrationViewController, animated: true, completion: nil)
     }
     
     @IBAction func loginButtonPressed(sender: AnyObject) {

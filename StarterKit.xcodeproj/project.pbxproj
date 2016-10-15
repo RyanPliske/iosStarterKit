@@ -14,6 +14,8 @@
 		F996D4541DAA958400DAC469 /* NSBundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996D4531DAA958400DAC469 /* NSBundle+Extension.swift */; };
 		F996D4A41DAAC4BA00DAC469 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996D4A31DAAC4BA00DAC469 /* LoginButton.swift */; };
 		F996D4A61DAACA0D00DAC469 /* KeyboardListeningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996D4A51DAACA0D00DAC469 /* KeyboardListeningView.swift */; };
+		F9E5E9FA1DB1AB9D00D07FAF /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9E5E9F91DB1AB9D00D07FAF /* Registration.storyboard */; };
+		F9E5E9FC1DB1ABE600D07FAF /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E5E9FB1DB1ABE600D07FAF /* RegistrationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		F996D4531DAA958400DAC469 /* NSBundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSBundle+Extension.swift"; sourceTree = "<group>"; };
 		F996D4A31DAAC4BA00DAC469 /* LoginButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		F996D4A51DAACA0D00DAC469 /* KeyboardListeningView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardListeningView.swift; sourceTree = "<group>"; };
+		F9E5E9F91DB1AB9D00D07FAF /* Registration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
+		F9E5E9FB1DB1ABE600D07FAF /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +64,10 @@
 			children = (
 				F95D54B81DA88D0600028D06 /* Info.plist */,
 				F95D54BE1DA88D8100028D06 /* StarterKitInterface.swift */,
-				F996D44E1DAA908900DAC469 /* LoginViewController.swift */,
-				F996D4501DAA918300DAC469 /* Login.storyboard */,
-				F996D4A31DAAC4BA00DAC469 /* LoginButton.swift */,
 				F90E5D721DAAE26700064708 /* TemporaryAuthenticationManager.swift */,
-				F996D4A51DAACA0D00DAC469 /* KeyboardListeningView.swift */,
-				F996D4521DAA956F00DAC469 /* Extensions */,
+				F9E5E9FD1DB1AC0700D07FAF /* Login */,
+				F9E5E9FF1DB1AC4200D07FAF /* Registration */,
+				F9E5E9FE1DB1AC2200D07FAF /* Utilities */,
 			);
 			path = StarterKit;
 			sourceTree = "<group>";
@@ -76,6 +78,34 @@
 				F996D4531DAA958400DAC469 /* NSBundle+Extension.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		F9E5E9FD1DB1AC0700D07FAF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F996D44E1DAA908900DAC469 /* LoginViewController.swift */,
+				F996D4501DAA918300DAC469 /* Login.storyboard */,
+				F996D4A31DAAC4BA00DAC469 /* LoginButton.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		F9E5E9FE1DB1AC2200D07FAF /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F996D4A51DAACA0D00DAC469 /* KeyboardListeningView.swift */,
+				F996D4521DAA956F00DAC469 /* Extensions */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		F9E5E9FF1DB1AC4200D07FAF /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				F9E5E9FB1DB1ABE600D07FAF /* RegistrationViewController.swift */,
+				F9E5E9F91DB1AB9D00D07FAF /* Registration.storyboard */,
+			);
+			name = Registration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F996D4511DAA918300DAC469 /* Login.storyboard in Resources */,
+				F9E5E9FA1DB1AB9D00D07FAF /* Registration.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +191,7 @@
 				F996D44F1DAA908900DAC469 /* LoginViewController.swift in Sources */,
 				F996D4A41DAAC4BA00DAC469 /* LoginButton.swift in Sources */,
 				F996D4A61DAACA0D00DAC469 /* KeyboardListeningView.swift in Sources */,
+				F9E5E9FC1DB1ABE600D07FAF /* RegistrationViewController.swift in Sources */,
 				F996D4541DAA958400DAC469 /* NSBundle+Extension.swift in Sources */,
 				F95D54BF1DA88D8100028D06 /* StarterKitInterface.swift in Sources */,
 			);

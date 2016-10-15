@@ -40,6 +40,13 @@ internal final class LoginViewController: UIViewController, UITextFieldDelegate 
         loginButton.alpha = 0.2
     }
     
+    @IBAction func usernameTextChanged(sender: AnyObject) {
+        loginEnabled()
+    }
+    
+    @IBAction func passwordTextChanged(sender: AnyObject) {
+        loginEnabled()
+    }
     // MARK: - UITextFieldDelegate
     
     internal func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -50,10 +57,6 @@ internal final class LoginViewController: UIViewController, UITextFieldDelegate 
             passwordTextField.becomeFirstResponder()
         }
         return true
-    }
-    
-    func textFieldDidEndEditing(textField: UITextField) {
-        loginEnabled()
     }
     
     private func loginEnabled() -> Bool {

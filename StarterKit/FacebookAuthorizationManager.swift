@@ -1,8 +1,5 @@
 import FBSDKCoreKit
 import FBSDKLoginKit
-//import FBSDKShareKit
-//import AWSCore
-//import Crashlytics
 
 protocol AuthorizationClientDelegate {
     func intializeClient(logins: [String: String], clearCredentials: Bool)

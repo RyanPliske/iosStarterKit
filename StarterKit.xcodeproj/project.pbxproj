@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		F90E5D731DAAE26700064708 /* TemporaryAuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90E5D721DAAE26700064708 /* TemporaryAuthenticationManager.swift */; };
 		F92FF9481DB4417500C67430 /* FacebookAuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92FF9471DB4417500C67430 /* FacebookAuthorizationManager.swift */; };
-		F92FF9581DB450BD00C67430 /* AWSCognito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F92FF9511DB450BD00C67430 /* AWSCognito.framework */; };
-		F92FF9591DB450BD00C67430 /* AWSCognitoIdentityProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F92FF9521DB450BD00C67430 /* AWSCognitoIdentityProvider.framework */; };
 		F92FF95B1DB450BD00C67430 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F92FF9551DB450BD00C67430 /* Bolts.framework */; };
 		F92FF95C1DB450BD00C67430 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F92FF9561DB450BD00C67430 /* FBSDKCoreKit.framework */; };
 		F92FF95D1DB450BD00C67430 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F92FF9571DB450BD00C67430 /* FBSDKLoginKit.framework */; };
@@ -49,9 +47,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F92FF95C1DB450BD00C67430 /* FBSDKCoreKit.framework in Frameworks */,
-				F92FF9581DB450BD00C67430 /* AWSCognito.framework in Frameworks */,
 				F92FF95D1DB450BD00C67430 /* FBSDKLoginKit.framework in Frameworks */,
-				F92FF9591DB450BD00C67430 /* AWSCognitoIdentityProvider.framework in Frameworks */,
 				F92FF95B1DB450BD00C67430 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

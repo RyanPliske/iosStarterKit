@@ -1,7 +1,7 @@
 import FBSDKCoreKit
 import FBSDKLoginKit
 //import FBSDKShareKit
-import AWSCore
+//import AWSCore
 //import Crashlytics
 
 protocol AuthorizationClientDelegate {

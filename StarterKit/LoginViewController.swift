@@ -14,7 +14,6 @@ internal final class LoginViewController: UIViewController, UITextFieldDelegate 
     @IBOutlet internal weak var passwordTextField: UITextField!
     @IBOutlet internal weak var loginImageView: UIImageView!
     @IBOutlet internal weak var loginButton: LoginButton!
-    @IBOutlet weak var registerButton: UIButton!
     
     internal override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,14 +21,8 @@ internal final class LoginViewController: UIViewController, UITextFieldDelegate 
         loginImageView.image = appInfo.loginBgImage
         usernameTextField.delegate = self
         passwordTextField.delegate = self
-        registerButton.hidden = !appInfo.includesRegistration
+//        registerButton.hidden = !appInfo.includesRegistration
         disableLoginButton()
-    }
-    
-    @IBAction func registrationButtonPressed(sender: AnyObject) {
-        let storyboard = UIStoryboard(name: "Registration", bundle: NSBundle.StarterKitBundle)
-        let registrationViewController = storyboard.instantiateInitialViewController() as! RegistrationViewController
-        presentViewController(registrationViewController, animated: true, completion: nil)
     }
     
     @IBAction func loginButtonPressed(sender: AnyObject) {

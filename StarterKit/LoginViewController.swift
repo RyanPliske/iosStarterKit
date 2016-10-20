@@ -3,6 +3,7 @@ import UIKit
 internal protocol LoginViewControllerDelegate: class {
     func loginSucceeded(username: String, password: String)
     func loginFailed()
+    func facebookLoginRequested(viewController: UIViewController)
 }
 
 internal final class LoginViewController: UIViewController, UITextFieldDelegate {
@@ -33,6 +34,10 @@ internal final class LoginViewController: UIViewController, UITextFieldDelegate 
     private func disableLoginButton() {
         loginButton.enabled = false
         loginButton.alpha = 0.2
+    }
+    
+    @IBAction func facebookButtonPressed(sender: AnyObject) {
+        delegate?.facebookLoginRequested(self)
     }
     
     @IBAction func usernameTextChanged(sender: AnyObject) {

@@ -110,11 +110,19 @@
 				F92FF96B1DB45F3700C67430 /* .gitignore */,
 				F95D54B81DA88D0600028D06 /* Info.plist */,
 				F95D54BE1DA88D8100028D06 /* StarterKitInterface.swift */,
-				F90E5D721DAAE26700064708 /* TemporaryAuthenticationManager.swift */,
 				F9E5E9FD1DB1AC0700D07FAF /* Login */,
 				F9E5E9FE1DB1AC2200D07FAF /* Utilities */,
 			);
 			path = StarterKit;
+			sourceTree = "<group>";
+		};
+		F9616DDA1DB8505D009901DB /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				F90E5D721DAAE26700064708 /* TemporaryAuthenticationManager.swift */,
+				F92FF9471DB4417500C67430 /* FacebookAuthorizationManager.swift */,
+			);
+			name = Authentication;
 			sourceTree = "<group>";
 		};
 		F996D4521DAA956F00DAC469 /* Extensions */ = {
@@ -128,10 +136,10 @@
 		F9E5E9FD1DB1AC0700D07FAF /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				F9616DDA1DB8505D009901DB /* Authentication */,
 				F996D44E1DAA908900DAC469 /* LoginViewController.swift */,
 				F996D4501DAA918300DAC469 /* Login.storyboard */,
 				F996D4A31DAAC4BA00DAC469 /* LoginButton.swift */,
-				F92FF9471DB4417500C67430 /* FacebookAuthorizationManager.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";

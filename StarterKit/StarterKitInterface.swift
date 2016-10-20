@@ -2,14 +2,26 @@ import Foundation
 import UIKit
 
 public struct AppInfo {
-    internal let loginBgImage: UIImage?
     internal let appName: String?
+    internal let loginBgImage: UIImage?
     internal let includesRegistration: Bool
+    internal let facebookInfo: FacebookInfo?
     
-    public init(appName: String? = nil, loginBackground bgImage: UIImage? = nil, includesRegistration: Bool = false) {
+    public init(appName: String? = nil, loginBackground bgImage: UIImage? = nil, includesRegistration: Bool = false, facebookInfo: FacebookInfo? = nil) {
         self.appName = appName
         self.loginBgImage = bgImage
         self.includesRegistration = includesRegistration
+        self.facebookInfo = facebookInfo
+    }
+}
+
+public struct FacebookInfo {
+    internal let facebookAppId: String
+    internal let facebookAppDisplayName: String
+    
+    public init(facebookAppId: String, facebookAppDisplayName: String) {
+        self.facebookAppId = facebookAppId
+        self.facebookAppDisplayName = facebookAppDisplayName
     }
 }
 
@@ -27,7 +39,7 @@ public protocol StarterKitDelegate: class {
     func userWasAuthenticated(withCredentials credentials: Credentials)
 }
 
-public class StarterKit: AuthenticationDelegate {
+public class Starter: AuthenticationDelegate {
     
     private let window: UIWindow
     private let hostAppInitialViewController: UIViewController
@@ -38,7 +50,11 @@ public class StarterKit: AuthenticationDelegate {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window = window!
         self.hostAppInitialViewController = initialViewController
-        self.authenticationManager = FakeAuthenticationManager(serviceManager: FakeAuthenticationServiceManager(), keyChainHelper: FakeKeyChainHelper())
+        var facebookManager: FacebookAuthorizationManager? = nil
+        if let fbInfo = appInfo.facebookInfo {
+            facebookManager = FacebookAuthorizationManager(facebookAppId: fbInfo.facebookAppId, facebookAppDisplayName: fbInfo.facebookAppDisplayName)
+        }
+        self.authenticationManager = FakeAuthenticationManager(serviceManager: FakeAuthenticationServiceManager(), keyChainHelper: FakeKeyChainHelper(), facebookManager: facebookManager)
         self.delegate = delegate
         // Post Initialization
         self.authenticationManager.delegate = self

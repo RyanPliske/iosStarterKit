@@ -15,19 +15,30 @@ final class FacebookAuthorizationManager {
     var authorizationClientDelegate: AuthorizationClientDelegate?
     weak var authorizationManagerSigninDelegate: AuthorizationManagerSigninDelegate?
     
-    private let facebookLoginManager = FBSDKLoginManager()
+    init(facebookAppId: String, facebookAppDisplayName: String) {
+        setupFacebookInfoPlist(facebookAppId, facebookAppDisplayName: facebookAppDisplayName)
+        FBSDKSettings.setAppID(facebookAppId)
+        FBSDKSettings.setDisplayName(facebookAppDisplayName)
+    }
     
-    init() {
-        self.facebookLoginManager.loginBehavior = .SystemAccount
-        
-        // TODO: Add Environment
-        FBSDKSettings.setAppID("")
-        FBSDKSettings.setDisplayName("")
+    private func setupFacebookInfoPlist(facebookAppId: String, facebookAppDisplayName: String) {
+        // Write to Info.plist (which one I really don't know. may be parent app!!!!)
+        // http://stackoverflow.com/questions/21893447/facebook-sdk-app-not-registered-as-a-url-scheme
+
+        let pathToInfoPlist = NSBundle.StarterKitBundle.pathForResource("Info", ofType: "plist")!
+        var infoDict = (NSDictionary(contentsOfFile: pathToInfoPlist) as! [String: AnyObject])
+        var urlTypes = [[String: AnyObject]]()
+        let urlType = ["URL Schemes": ["fb" + facebookAppId]]
+        urlTypes.append(urlType)
+        infoDict["URL types"] = urlTypes
+        (infoDict as NSDictionary).writeToFile(pathToInfoPlist, atomically: false)
     }
     
     func presentFacebookLogin(viewController: UIViewController) {
         func facebookLogin() {
-            facebookLoginManager.logInWithReadPermissions(["email"], fromViewController: viewController) { [unowned self] (result, error) -> Void in
+            let loginManager = FBSDKLoginManager()
+            loginManager.loginBehavior = .SystemAccount
+            loginManager.logInWithReadPermissions(["email"], fromViewController: viewController) { [unowned self] (result, error) -> Void in
                 if (error != nil) {
                     dispatch_async(dispatch_get_main_queue()) {
                         
@@ -49,7 +60,9 @@ final class FacebookAuthorizationManager {
     }
     
     func facebookLogout() {
-        facebookLoginManager.logOut()
+        let loginManager = FBSDKLoginManager()
+        loginManager.loginBehavior = .SystemAccount
+        loginManager.logOut()
     }
     
     private func completeFacebookLogin() {

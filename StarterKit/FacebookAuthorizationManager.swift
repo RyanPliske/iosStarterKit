@@ -14,35 +14,35 @@ protocol AuthorizationManagerSigninDelegate: class {
 final class FacebookAuthorizationManager {
     var authorizationClientDelegate: AuthorizationClientDelegate?
     weak var authorizationManagerSigninDelegate: AuthorizationManagerSigninDelegate?
+    private let loginManager = FBSDKLoginManager()
     
     init(facebookAppId: String, facebookAppDisplayName: String) {
+        loginManager.loginBehavior = .SystemAccount
         FBSDKSettings.setAppID(facebookAppId)
         FBSDKSettings.setDisplayName(facebookAppDisplayName)
     }
     
     func presentFacebookLogin(viewController: UIViewController) {
-        func facebookLogin() {
-            let loginManager = FBSDKLoginManager()
-            loginManager.loginBehavior = .SystemAccount
-            loginManager.logInWithReadPermissions(["email"], fromViewController: viewController) { [unowned self] (result, error) -> Void in
-                if (error != nil) {
-                    dispatch_async(dispatch_get_main_queue()) {
-                        
-                        self.authorizationManagerSigninDelegate?.signInCompleted("Unable to authenticate. Please try again later")
-                    }
-                } else if result.isCancelled {
-                    dispatch_async(dispatch_get_main_queue()) {
-                        
-                        self.authorizationManagerSigninDelegate?.signInCanceled()
-                    }
-                } else {
-                    self.completeFacebookLogin()
+        authorizationManagerSigninDelegate?.signingIn()
+        FBSDKAccessToken.currentAccessToken() != nil ? completeFacebookLogin() : facebookLogin(usingViewController: viewController)
+    }
+    
+    private func facebookLogin(usingViewController viewController: UIViewController) {
+        loginManager.logInWithReadPermissions(["email"], fromViewController: viewController) { [unowned self] (result, error) -> Void in
+            if (error != nil) {
+                dispatch_async(dispatch_get_main_queue()) {
+                    
+                    self.authorizationManagerSigninDelegate?.signInCompleted("Unable to authenticate. Please try again later")
                 }
+            } else if result.isCancelled {
+                dispatch_async(dispatch_get_main_queue()) {
+                    
+                    self.authorizationManagerSigninDelegate?.signInCanceled()
+                }
+            } else {
+                self.completeFacebookLogin()
             }
         }
-        
-        authorizationManagerSigninDelegate?.signingIn()
-        FBSDKAccessToken.currentAccessToken() != nil ? completeFacebookLogin() : facebookLogin()
     }
     
     func facebookLogout() {

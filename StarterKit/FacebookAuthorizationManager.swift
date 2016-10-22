@@ -31,12 +31,10 @@ final class FacebookAuthorizationManager {
         loginManager.logInWithReadPermissions(["email"], fromViewController: viewController) { [unowned self] (result, error) -> Void in
             if (error != nil) {
                 dispatch_async(dispatch_get_main_queue()) {
-                    
                     self.authorizationManagerSigninDelegate?.signInCompleted("Unable to authenticate. Please try again later")
                 }
             } else if result.isCancelled {
                 dispatch_async(dispatch_get_main_queue()) {
-                    
                     self.authorizationManagerSigninDelegate?.signInCanceled()
                 }
             } else {

@@ -4,7 +4,7 @@ class LoginButton: UIButton {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.layer.cornerRadius = 15
+        self.layer.cornerRadius = 20
     }
     
 }

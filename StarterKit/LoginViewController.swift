@@ -19,7 +19,7 @@ internal final class LoginViewController: UIViewController, UITextFieldDelegate 
     
     internal override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(red: 146/255, green: 204/255, blue: 148/255, alpha: 1.0)
+        view.backgroundColor = UIColor(red: 181/255, green: 210/255, blue: 105/255, alpha: 1.0)
         loginImageView.image = appInfo.loginBgImage
         logoImageView.image = appInfo.logoImage
         usernameTextField.delegate = self

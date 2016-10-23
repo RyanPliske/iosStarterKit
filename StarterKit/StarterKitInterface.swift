@@ -6,12 +6,14 @@ public struct AppInfo {
     internal let loginBgImage: UIImage?
     internal let includesRegistration: Bool
     internal let facebookInfo: FacebookInfo?
+    internal let logoImage: UIImage?
     
-    public init(appName: String? = nil, loginBackground bgImage: UIImage? = nil, includesRegistration: Bool = false, facebookInfo: FacebookInfo? = nil) {
+    public init(appName: String? = nil, loginBackground bgImage: UIImage? = nil, includesRegistration: Bool = false, facebookInfo: FacebookInfo? = nil, logoImage: UIImage? = nil) {
         self.appName = appName
         self.loginBgImage = bgImage
         self.includesRegistration = includesRegistration
         self.facebookInfo = facebookInfo
+        self.logoImage = logoImage
     }
 }
 

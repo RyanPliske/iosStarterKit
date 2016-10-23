@@ -11,6 +11,7 @@ internal final class LoginViewController: UIViewController, UITextFieldDelegate 
     internal weak var delegate: LoginViewControllerDelegate?
     internal var appInfo: AppInfo!
     
+    @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet internal weak var usernameTextField: UITextField!
     @IBOutlet internal weak var passwordTextField: UITextField!
     @IBOutlet internal weak var loginImageView: UIImageView!
@@ -20,6 +21,7 @@ internal final class LoginViewController: UIViewController, UITextFieldDelegate 
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 146/255, green: 204/255, blue: 148/255, alpha: 1.0)
         loginImageView.image = appInfo.loginBgImage
+        logoImageView.image = appInfo.logoImage
         usernameTextField.delegate = self
         passwordTextField.delegate = self
 //        registerButton.hidden = !appInfo.includesRegistration

@@ -64,6 +64,13 @@
                                     <action selector="facebookButtonPressed:" destination="JEX-uh-Pdp" eventType="touchUpInside" id="Vlg-y4-N1O"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rOV-6j-367">
+                                <rect key="frame" x="180" y="54" width="241" height="183"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="241" id="WSc-sU-D7v"/>
+                                    <constraint firstAttribute="height" constant="183" id="n8e-t6-qGh"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -76,11 +83,13 @@
                             <constraint firstItem="c0L-qd-wEE" firstAttribute="leading" secondItem="R4n-1C-VBc" secondAttribute="leading" id="Ipq-2J-CV2"/>
                             <constraint firstItem="oUd-vc-xDQ" firstAttribute="top" secondItem="mE3-c2-SAy" secondAttribute="bottom" constant="20" id="IuI-kk-Chz"/>
                             <constraint firstItem="pQr-wa-Cuu" firstAttribute="width" secondItem="oUd-vc-xDQ" secondAttribute="width" id="L0C-ya-4UH"/>
+                            <constraint firstItem="rOV-6j-367" firstAttribute="centerX" secondItem="c0L-qd-wEE" secondAttribute="centerX" id="TR9-b2-SBV"/>
                             <constraint firstAttribute="trailing" secondItem="c0L-qd-wEE" secondAttribute="trailing" id="UML-6K-0xK"/>
                             <constraint firstItem="mE3-c2-SAy" firstAttribute="height" secondItem="xLz-wP-IFX" secondAttribute="height" id="dEg-vP-Rba"/>
                             <constraint firstItem="mE3-c2-SAy" firstAttribute="centerX" secondItem="c0L-qd-wEE" secondAttribute="centerX" id="eer-Hh-pdG"/>
                             <constraint firstItem="xLz-wP-IFX" firstAttribute="centerX" secondItem="c0L-qd-wEE" secondAttribute="centerX" id="g9l-vD-jBg"/>
                             <constraint firstItem="pQr-wa-Cuu" firstAttribute="centerX" secondItem="c0L-qd-wEE" secondAttribute="centerX" id="gHt-D6-M8g"/>
+                            <constraint firstItem="xLz-wP-IFX" firstAttribute="top" secondItem="rOV-6j-367" secondAttribute="bottom" constant="43" id="mN8-DL-TsW"/>
                             <constraint firstItem="9N1-6h-if3" firstAttribute="top" secondItem="c0L-qd-wEE" secondAttribute="bottom" id="mX4-2l-Q6X"/>
                             <constraint firstItem="oUd-vc-xDQ" firstAttribute="height" secondItem="xLz-wP-IFX" secondAttribute="height" id="niE-tU-XGC"/>
                             <constraint firstItem="c0L-qd-wEE" firstAttribute="top" secondItem="R4n-1C-VBc" secondAttribute="top" id="ufH-zP-e1D"/>
@@ -91,6 +100,7 @@
                     <connections>
                         <outlet property="loginButton" destination="oUd-vc-xDQ" id="NiU-Rn-Mln"/>
                         <outlet property="loginImageView" destination="c0L-qd-wEE" id="ntD-HP-7ha"/>
+                        <outlet property="logoImageView" destination="rOV-6j-367" id="CEJ-Lx-ii6"/>
                         <outlet property="passwordTextField" destination="mE3-c2-SAy" id="Rys-tC-mN8"/>
                         <outlet property="usernameTextField" destination="xLz-wP-IFX" id="Ezd-qU-GrX"/>
                     </connections>
